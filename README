@@ -1,0 +1,158 @@
+/*Nazdravan Georgiana Alexandra 314CB*/
+
+	adaugareTab:
+functie ce primeste ca parametrii lista de taburi si tab-ul curent si aloca
+o celula de lista de taburi si o adauga la lista
+
+	newtab:
+functie ce primeste ca parametrii tab-ul curent si lista de taburi si aloca
+un tab curent ce va urma sa fie adaugat in campul info al celulei de lista
+prin apelarea functiei adaugareTab
+
+	deltab:
+functie ce primeste ca parametrii lista de taburi si tab-ul curent si sterge
+ultimul tab din lista, avand grija ca in situatia in care tab-ul curent e chiar
+ultimul, sa ne mutam cu o pozitie mai in spate
+
+	change_tabs:
+functie ce primeste ca parametrii lista de taburi, tab-ul curent si fisierul
+din care se citeste si schimba tab-ul curent in functie de index-ul citit
+din fisier
+
+	print_open_tabs:
+functie ce primeste ca parametrii lista de tab-uri si fisierul in care se scrie
+si prin parcurgerea cu un pointer temp cu ajutorul unui for se scrie in fisier
+url-ul si indecsii
+
+	open_page:
+functie ce primeste ca parametrii tab-ul curent, coada istoricului global si
+fisierul din care se citeste; scopul functiei e de a seta o pagina pe campul de
+current_page al tab-ului, sa o introducem si in stiva de back, s-o introducem
+si in coada istoricului global si sa stergem ce se afla in stiva de forward,
+daca se afla cumva ceva, in primul rand.
+
+	back:
+functie care primeste ca parametrii tab-ul curent si fisierul in care se scrie
+si care "merge" cu o pozitie in urma. adica, daca se da back, elementul de 
+deasupra stivei se duce in forward, iar al doilea element devine pagina curenta,
+fara a-l scoate din stiva; daca nu exista elemente in stiva, se afiseaza un 
+mesaj si se iese din functie
+
+	forward:
+functie care primeste ca parametrii tab-ul curent si fisierul in care se scrie
+si care "merge" cu o pozitie in fata. adica, daca se da forward, elementul de
+deasupra stivei se baga in back si apoi se face mutarea in current_page; daca
+nu exista elemente in stiva, se afiseaza un mesaj si se iese din functie
+
+	push:
+functie clasica de push care primeste ca parametrii stiva si elementul ce
+trebuie adaugat in stiva si adauga acest element in stiva
+
+
+	isEpmty:
+functie care primeste ca parametru o stiva si verifica daca e goala
+
+	pop:
+functie care primeste ca parametru o stiva si scoate cel mai de sus element
+al stivei si il returneaza, modificand stiva
+
+	top:
+functie care primeste ca parametru o stiva si returneaza elementul cel mai
+de sus al stivei, fara a modifica stiva
+
+	move:
+Tab** TabCurent, Pagina page
+functie care primeste ca parametrii tab-ul curent si o pagina si schimba
+campurile de la current_page a tab-ului cu ce este in page.
+
+	createQ:
+functie care nu primeste parametrii dar care creeaza o coada si o returneaza
+(creeaza coada de istoric global)
+
+	Enqueue:
+functie care primeste ca parametrii o coada istoricului global si un url si 
+care adauga la finalul acesteia url-ul dat ca parametru (cand se va apela 
+functia in open_page, va fi vorba de url-ul paginii curente)
+
+	history:
+functie care primeste ca parametrii coada istoricului global si fisierul in
+care se scrie si care, prin intermediul unei copii, afiseaza aceasta coada
+
+	ExtrQ:
+functie care primeste ca parametru o coada si scoate primul element din ea;
+returneaza 1 daca extragerea a avut succes
+
+	DelQ:
+functie care primeste ca parametru o coada si sterge toata coada
+
+	del_history:
+functie care primeste ca parametrii coada istoricului global si fisierul din
+care se citeste si care sterge un anumit numar de url-uri, in fucntie de 
+numarul citit din fisier; daca numarul e mai mare decat numarul de elemente
+ale cozii sau daca numarul este 0, atunci se sterge toata coada; in caz contrar
+se sterge doar un anumit numar de elemente
+
+	CopieQ:
+functie care primeste ca parametru o coada si care returneaza o copie
+(folosita pentru a nu pierde coada istoricului global)
+
+	list_dl:
+functie care primeste ca parametrii tab-ul curent si fisierul in care se scrie
+si care scrie in fisier lista resurselor ce pot fi descarcate
+
+	downloads:
+functie care primeste ca parametrii coada de prioritati si fisierul in care se
+scrie si care scrie in fisier descarcarile
+
+	download:
+functie care primeste ca parametrii coada de prioritati, tab-ul curent si
+fisierul din care se citeste si care creeaza o copie a resursei aflata la
+un anumit index (citit din fisier) si care apoi adauga copia in coada de
+prioritati (care este de, fapt, o lista generica)
+
+	copiereResursa:
+functie care primeste ca parametru o resursa si care returneaza o copie
+a acestei resurse
+
+	createQPriority:
+functie care nu are parametrii si care creeaza o coada de prioritati
+si o returneaza
+
+	InsSortata:
+functie care primeste ca parametrii coada de prioritati si elementul
+ce trebuie adaugat in coada; se face niste matematica si sa introduce
+elementul pe o anumita pozitie
+
+	diferenta:
+primeste ca parametru o resursa si returneaza diferenta intre campul dimension
+si currently_downloaded
+
+	wait:
+functie care primeste ca parametrii coada de prioritati, tab-ul curent, viteza
+de transfer si fisierul de input si care "descarca" resurse in pagina curenta
+a tab-ului
+
+	ExtrQPriority:
+functie care primeste ca parametru coada de prioritati si extrage un element
+din ea
+
+	actualizareDownload:
+functie care primeste ca parametrii tab-ul curent, viteza de transfer si
+numele unei resurse; se cauta numele resursei (ce va fi din coada de 
+prioritati) in vectorul de resurse si atunci cand se gaseste, se 
+actualizeaza ce este in currenty_downloaded
+
+	set_band:
+functie care primeste ca parametru un unsigned long(viteza de transfer) si
+fisierul din care se citeste si seteaza aceasta viteza; daca nu se apeleaza 
+functia, se considera ca viteza de transfer este 1024
+
+	nrElem:
+functie care primeste ca parametru o coada si intoarce numarul ei de elemente 
+
+	waitOne:
+functie care primeste ca parametrii coada ce prioritati, tab-ul curent si viteza
+de transfer si care actualizeaza atat coada de prioritati, cat si tab-ul curent
+(in ceea ce priveste currently_downloaded); se apeleaza numai impreuna cu goto
+
+/*70 de puncte pe checker*/
